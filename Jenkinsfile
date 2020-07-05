@@ -50,9 +50,11 @@ pipeline {
 		}
 		success {
 			echo "this command executes only when all stages succeed"
+			mail bcc: '', body: 'TEST Sending SUCCESS email from jenkins', cc: '', from: '', replyTo: '', subject: 'SUCCESS BUILDING PROJECT X', to: 'andre.consultant@gmail.com'
 		}
 		failure {
 			echo "this command executes when one of the stages failed"
+			mail bcc: '', body: 'TEST Sending FAILURE email from jenkins', cc: '', from: '', replyTo: '', subject: 'ERROR BUILDING PROJECT X', to: 'andre.consultant@gmail.com'
 		}
 	}
 }
