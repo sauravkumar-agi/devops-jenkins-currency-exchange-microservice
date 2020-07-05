@@ -30,6 +30,12 @@ pipeline {
 				//sh 'mvn --version'
 				sh 'node --version'
 				echo "Build"
+				echo "PATH - $PATH"
+				echo "BUILD NUMBER - $env.BUILD_NUMBER"
+				echo "BUILD ID - $env.BUILD_ID"
+				echo "JOB NAME - $env.JOB_NAME"
+				echo "BUILD TAG - $env.BUILD_TAG"
+				echo "BUILD URL - $env.BUILD_URL"
 			}
 		}
 		stage("Test") {
@@ -50,11 +56,11 @@ pipeline {
 		}
 		success {
 			echo "this command executes only when all stages succeed"
-			mail bcc: '', body: 'TEST Sending SUCCESS email from jenkins', cc: '', from: '', replyTo: '', subject: 'SUCCESS BUILDING PROJECT X', to: 'andre.consultant@gmail.com'
+			//mail bcc: '', body: 'TEST Sending SUCCESS email from jenkins', cc: '', from: '', replyTo: '', subject: 'SUCCESS BUILDING PROJECT X', to: 'andre.consultant@gmail.com'
 		}
 		failure {
 			echo "this command executes when one of the stages failed"
-			mail bcc: '', body: 'TEST Sending FAILURE email from jenkins', cc: '', from: '', replyTo: '', subject: 'ERROR BUILDING PROJECT X', to: 'andre.consultant@gmail.com'
+			//mail bcc: '', body: 'TEST Sending FAILURE email from jenkins', cc: '', from: '', replyTo: '', subject: 'ERROR BUILDING PROJECT X', to: 'andre.consultant@gmail.com'
 		}
 	}
 }
