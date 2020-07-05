@@ -12,7 +12,7 @@
 //		echo "Integration Test"
 //	}
 //}
-nome {
+node {
 	echo "Build"
 	echo "Test"
 	echo "Integration Test"
