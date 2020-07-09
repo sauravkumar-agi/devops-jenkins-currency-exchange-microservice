@@ -74,7 +74,7 @@ pipeline {
 			steps {
 				//docker build -t andrepereira/currency-exchange:$env.BUILD_TAG
 				script {
-					dockerImage = docker.build("andrepereira/currency-exchange:$env.BUILD_TAG")
+					dockerImage = docker.build("andrepereira/big-response:0.0.1")
 				}
 			}
 		}

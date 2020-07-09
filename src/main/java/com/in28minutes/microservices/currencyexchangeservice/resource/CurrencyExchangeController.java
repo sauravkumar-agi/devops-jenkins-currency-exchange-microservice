@@ -1,5 +1,7 @@
 package com.in28minutes.microservices.currencyexchangeservice.resource;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -30,7 +32,7 @@ public class CurrencyExchangeController {
 
 	//http://localhost:8000/currency-exchange/from/USD/to/INR
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
-	public ExchangeValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to,
+	public List<ExchangeValue> retrieveExchangeValue(@PathVariable String from, @PathVariable String to,
 			@RequestHeader Map<String, String> headers) {
 
 		printAllHeaders(headers);
@@ -45,7 +47,11 @@ public class CurrencyExchangeController {
 
 		exchangeValue.setExchangeEnvironmentInfo(instanceInformationService.retrieveInstanceInfo());
 
-		return exchangeValue;
+		List<ExchangeValue> bigList = new ArrayList<>();
+		for (int i=0; i<= 1000000; i++)
+			bigList.add(exchangeValue);
+			 
+		return bigList;
 	}
 
 	private void printAllHeaders(Map<String, String> headers) {
