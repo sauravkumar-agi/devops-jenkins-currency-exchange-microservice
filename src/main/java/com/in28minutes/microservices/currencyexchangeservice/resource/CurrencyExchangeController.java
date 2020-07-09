@@ -48,9 +48,9 @@ public class CurrencyExchangeController {
 		exchangeValue.setExchangeEnvironmentInfo(instanceInformationService.retrieveInstanceInfo());
 
 		List<ExchangeValue> bigList = new ArrayList<>();
-		for (int i=0; i<= 1000000; i++)
+		for (int i=0; i<= 10000; i++)
 			bigList.add(exchangeValue);
-			 
+
 		return bigList;
 	}
 
