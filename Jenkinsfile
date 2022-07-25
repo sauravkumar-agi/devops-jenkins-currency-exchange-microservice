@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage("Checkout") {
       steps {
-        git branch: 'master', url: 'https://github.com/asnaga/devops-jenkins-currency-exchange-microservice.git'
+        git branch: 'master', url: 'https://github.com/sauravkumar-agi/devops-jenkins-currency-exchange-microservice.git'
         sh 'mvn --version'
         sh 'docker --version'
         //sh 'node --version'
