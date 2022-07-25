@@ -97,7 +97,15 @@ pipeline {
           }
         }
         }
-
+    stage('Update_yml_file'){
+            steps{
+              script {
+                sh "chmod 777 deploy.sh"
+                sh "sh -x deploy.sh ${BUILD_NUMBER}"
+                sh "cat deploymentservice.yml"
+               }
+            }
+        }
     stage('Deploying_to_EKS') {
         steps {
           script {
