@@ -119,10 +119,10 @@ pipeline {
           emailext attachLog: true, body: "${JOB_NAME} - Deployment Failed - ${BUILD_NUMBER}", subject: 'Pipeline Failed', to: "${DevOps}"
         }
       }
-    }
+    }*/
 
   }
-  post {
+  /*post {
        always {
          echo "This command runs always"
          //mail bcc: '', body: 'TEST Sending SUCCESS email from jenkins', cc: '', from: '', replyTo: '', subject: 'SUCCESS BUILDING PROJECT $env.JOB_NAME', to: 'rohith.b@arisglobal.com'
@@ -137,5 +137,5 @@ pipeline {
          echo "this command executes when one of the stages failed"
          //mail bcc: '', body: 'TEST Sending FAILURE email from jenkins', cc: '', from: '', replyTo: '', subject: 'ERROR BUILDING PROJECT $env.JOB_NAME', to: 'rohith.b@arisglobal.com'
        }
-     } */
-}
+     } 
+}*/
