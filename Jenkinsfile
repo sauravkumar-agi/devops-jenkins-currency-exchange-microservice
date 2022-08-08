@@ -121,10 +121,10 @@ pipeline {
           emailext attachLog: true, body: "${JOB_NAME} - Deployment Failed - ${BUILD_NUMBER}", subject: 'Pipeline Failed', to: "${DevOps}"
         }
       }
-    }*/
+    }
 
   }
-  /*post {
+  post {
        always {
          echo "This command runs always"
          //mail bcc: '', body: 'TEST Sending SUCCESS email from jenkins', cc: '', from: '', replyTo: '', subject: 'SUCCESS BUILDING PROJECT $env.JOB_NAME', to: 'rohith.b@arisglobal.com'
