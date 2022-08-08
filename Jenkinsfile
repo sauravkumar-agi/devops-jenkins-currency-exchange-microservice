@@ -75,6 +75,8 @@ pipeline {
           }
         }
       }
+    }
+  }
 
   /*stage("Docker_Image_Push") {
         environment {
