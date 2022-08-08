@@ -33,7 +33,7 @@ pipeline {
         script {
           try {
             echo "Running Unit Test"
-            sh "mvn test"
+            sh 'mvn test -DExpectedCurrencyValue="7300"'
             } catch (e) {
               currentBuild.Result = 'FAILURE'
               throw e
@@ -76,7 +76,7 @@ pipeline {
         }
       }
 
-  stage("Docker_Image_Push") {
+  /*stage("Docker_Image_Push") {
         environment {
           registryCredential = 'dockerhublogin'
         }
@@ -137,5 +137,5 @@ pipeline {
          echo "this command executes when one of the stages failed"
          //mail bcc: '', body: 'TEST Sending FAILURE email from jenkins', cc: '', from: '', replyTo: '', subject: 'ERROR BUILDING PROJECT $env.JOB_NAME', to: 'rohith.b@arisglobal.com'
        }
-     }
+     } */
 }
