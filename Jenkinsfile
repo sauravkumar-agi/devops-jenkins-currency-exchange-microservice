@@ -34,7 +34,7 @@ pipeline {
           try {
             echo "Running Unit Test"
               sh '''
-              mvn test -DExpectedCurrencyValue="7500"
+              mvn test
               '''
             } catch (e) {
               currentBuild.Result = 'FAILURE'
