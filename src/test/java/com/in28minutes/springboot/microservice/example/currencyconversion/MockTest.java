@@ -40,7 +40,7 @@ public class MockTest {
 		
 		when(service.convertCurrencyFeign("EUR", "INR", quantity)).thenReturn(RECORD_1);
 		this.mockMvc.perform(get("/currency-converter-feign/from/EUR/to/INR/quantity/100")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString(System.getProperty("ExpectedCurrencyValue"))));
+				.andExpect(content().string(containsString("7500")));
 	}
 	
 	@Test
@@ -48,7 +48,7 @@ public class MockTest {
 		
 		when(service.convertCurrency("EUR", "INR", quantity)).thenReturn(RECORD_1);
 		this.mockMvc.perform(get("/currency-converter/from/EUR/to/INR/quantity/100")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString(System.getProperty("ExpectedCurrencyValue"))));
+				.andExpect(content().string(containsString("7500")));
 	}
 	
 	
